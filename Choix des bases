@@ -1,2 +1,15 @@
 Insee:
-    -commerce
+    - commerce
+    - enseignement Education
+    - condition société
+    - santé
+    - Service tourisme et transport
+
+Grand Nancy:
+    - place de parking disponible
+    - Arret bus/tram/Ligne  kml
+    - parc et jardin
+    - parking à vélo
+    - point location vélo
+    - station vélo stan lib
+    - reseau stan horaire
