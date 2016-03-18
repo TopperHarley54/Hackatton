@@ -9,7 +9,7 @@
         "files": [ "app/config.php", "app/Controller/Controller.php", "app/SecurityTools.php",
                     "app/Controller/Authentification.php" ],
         "classmap": [
-            "app/models"
+            "app/model"
         ]
     }
 }
