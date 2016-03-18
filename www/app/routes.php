@@ -26,6 +26,12 @@ $app->group('/api', function () use ($app) {
         $c->alerteId($id);
     })->name('api-alerte-id');
 
+    $app->post('/alerte', function () use ($app) {
+        $c = new ControllerAPI($app);
+        $alerte = json_decode($app->request->getBody())[0];
+        $c->alerteAdd($alerte);
+    })->name('api-post-alerte');
+
 });
 
 ?>

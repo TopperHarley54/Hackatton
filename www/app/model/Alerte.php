@@ -9,13 +9,13 @@ class Alerte extends Model{
     protected $table = 'alerte';
     public $timestamps = false;
     
-    public static function newAlerte($lat, $lng, $type, $commentaire) {
+    public static function newAlerte($insert_alerte) {
         try {
             $alerte = new Alerte;
-            $alerte->lat = $lat;
-            $alerte->lng = $lng;
-            $alerte->type = $type;
-            $alerte->commentaire = $commentaire;
+            $alerte->lat = $insert_alerte->lat;
+            $alerte->lng = $insert_alerte->lng;
+            $alerte->type = $insert_alerte->type;
+            $alerte->commentaire = $insert_alerte->commentaire;
             $alerte->nbValide = 0;
             $alerte->nbRefus = 0;
             $alerte->save();
