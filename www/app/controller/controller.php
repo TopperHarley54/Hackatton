@@ -17,6 +17,12 @@ class controller
         $this->app->render('header.twig');
     }
 
+    //AFFICHER LE NAVBAR
+    public function navbar()
+    {
+        $this->app->render('navbar.twig');
+    }
+
     //AFFICHER LE FOOTER
     public function footer()
     {
@@ -24,10 +30,13 @@ class controller
     }
 
 
+
+
     //GENERE LA PAGE D ACCUEIL
     public function accueil()
     {
         $this->header();
+        $this->navbar();
         $this->footer();
     }
 
