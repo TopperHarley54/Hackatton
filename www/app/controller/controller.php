@@ -20,9 +20,11 @@ class controller
     //AFFICHER LE NAVBAR
     public function navbar()
     {
-        // $this->app->render('navbar.twig', array{
-        //   'options' =>
-        // });
+        $this->app->render('navbar.twig', array(
+          'options' =>  array(
+            array('title' => 'Ecole', 'type' => ['Elementaire', 'Elementaire avec cantine', 'Maternelle', 'Maternelle avec cantine']),
+            array('title' => 'Médical', 'type' => ['Général', 'Cardiologue', 'Dermatologue', 'Gynécologue Médicale', 'Gynécologue Obstétrique', 'Gastro-entéro-hépatologie', 'Psychiatre', 'Ophtalmologiste', 'Oto-rhino-laryngologie', 'Pédiatre', 'Pneumologue', 'Radiologie', 'Stomatologie', 'Dentiste', 'Infirmier', 'Kinésithérapeute'])
+        )));
     }
 
     //AFFICHER LA MAP
