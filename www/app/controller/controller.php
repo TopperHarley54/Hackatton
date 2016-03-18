@@ -22,7 +22,10 @@ class controller
     {
         $this->app->render('navbar.twig');
     }
-
+    public function map()
+    {
+        $this->app->render('map.twig');
+    }
     //AFFICHER LE FOOTER
     public function footer()
     {
@@ -37,6 +40,7 @@ class controller
     {
         $this->header();
         $this->navbar();
+        $this->map();
         $this->footer();
     }
 
