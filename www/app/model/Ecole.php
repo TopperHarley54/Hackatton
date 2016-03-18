@@ -15,6 +15,12 @@ class Ecole extends Model{
     protected $table = "ecole";
     public $timestamps = false;
 
+    public static function getAllDocuments($var)
+    {
+        return Ecole::get($var);
+
+    }
+
 }
 
 
