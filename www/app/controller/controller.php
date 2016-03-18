@@ -17,6 +17,20 @@ class controller
         $this->app->render('header.twig');
     }
 
+    //AFFICHER LE NAVBAR
+    public function navbar()
+    {
+        // $this->app->render('navbar.twig', array{
+        //   'options' =>
+        // });
+    }
+
+    //AFFICHER LA MAP
+    public function map()
+    {
+        $this->app->render('map.twig');
+    }
+
     //AFFICHER LE FOOTER
     public function footer()
     {
@@ -24,10 +38,14 @@ class controller
     }
 
 
+
+
     //GENERE LA PAGE D ACCUEIL
     public function accueil()
     {
         $this->header();
+        $this->navbar();
+        $this->map();
         $this->footer();
     }
 
