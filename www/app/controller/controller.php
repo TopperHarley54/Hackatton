@@ -20,9 +20,17 @@ class controller
     //AFFICHER LE NAVBAR
     public function navbar()
     {
-        // $this->app->render('navbar.twig', array{
-        //   'options' =>
-        // });
+        $this->app->render('navbar.twig', array(
+          'options' =>  array(
+            array('title' => 'Ecole', 'type' => ['Elementaire', 'Elementaire avec cantine', 'Maternelle', 'Maternelle avec cantine']),
+            array('title' => 'Médical', 'type' => ['Général', 'Cardiologue', 'Dermatologue', 'Gynécologue Médicale', 'Gynécologue Obstétrique', 'Gastro-entéro-hépatologie', 'Psychiatre', 'Ophtalmologiste', 'Oto-rhino-laryngologie', 'Pédiatre', 'Pneumologue', 'Radiologie', 'Stomatologie', 'Dentiste', 'Infirmier', 'Kinésithérapeute']),
+            array('title' => 'Sport/Loisir', 'type' => ['Athlétisme', 'Natation', 'Boulodrome', 'Tennis', 'Equipementier Spécialisé', ' Domaine skiable', 'Centre équestre', 'Terrain de golf', 'Parcours sport/santé', 'Sport de glace', 'Terrain de jeux extérieurs', 'Terrains de grand jeu', 'Salle de combat', 'Skatepark', 'Sport Nautique', 'Bowling', 'Salle de remise en forme', 'Gymnase', 'Port de plaisance / Mouillage', 'Boucle Randonnée', 'Cinéma', 'Théatre']),
+            array('title' => 'Commerce Alimentaire', 'type' => ['Epicerie', 'Boulangerie', 'Boucherie/Charcuterie', 'Surgelé', 'Poissonnerie']),
+            array('title' => 'Marché', 'type' => ['Hyper', 'Super', 'Superette', 'Droguerie']),
+            array('title' => 'Pour la maison', 'type' => ['Bricolage', 'Equipement foyer', 'Electromenager et audio-visuelle', 'Meuble', 'Revètement mur/sol', 'Cuisine']),
+            array('title' => 'Shopping', 'type' => ['Librairie', 'Vêtement', 'Chaussures', 'Sport/Loisir', 'Parfumerie', 'Bijouterie', 'Fleuriste', 'Optique']),
+            array('title' => 'Station-service', 'type' => ['Station-service']),
+        )));
     }
 
     //AFFICHER LE FOOTER

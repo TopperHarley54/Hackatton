@@ -1,7 +1,12 @@
 <div>
   {% for option in options %}
     <div>
-      {{option}}
+      {{option.title}}
+      <ul>
+      {% for cat in option.type %}
+        <li><input type='checkbox'>{{cat}}</input></li>
+      {% endfor %}
+    </ul>
     </div>
   {% endfor %}
 </div>
