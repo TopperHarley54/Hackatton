@@ -14,4 +14,9 @@ $app->get('/accueil', function () use ($app) {
 })->name('accueil');
 
 
+$app->get('/test-api', function () use ($app) {
+    $c = new Controller($app);
+    $c->testApi();
+})->name('test-api');
+
 ?>
