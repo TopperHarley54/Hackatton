@@ -31,6 +31,13 @@ class controller
         $this->footer();
     }
 
+    public function testApi()
+    {
+        $velib = Velib::getVelib();
+        $this->app->render('velib.twig', array(
+            'name' => $velib[0]['name']
+        ));
+    }
 
   }
 
