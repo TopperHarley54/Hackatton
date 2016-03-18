@@ -1,3 +1,4 @@
 www/vendor
 www/composer.lock
 www/config.ini
+.idea/*

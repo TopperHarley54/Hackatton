@@ -52,6 +52,10 @@ class controller
         $this->footer();
     }
 
+    public function searchBar(){
+
+    }
+
 
   }
 
