@@ -20,8 +20,12 @@ class controller
     //AFFICHER LE NAVBAR
     public function navbar()
     {
-        $this->app->render('navbar.twig');
+        // $this->app->render('navbar.twig', array{
+        //   'options' =>
+        // });
     }
+
+    //AFFICHER LA MAP
     public function map()
     {
         $result = file_get_contents("http://ip-api.com/json");
@@ -29,6 +33,7 @@ class controller
         $this->app->render('map.twig', array('latitude' => $result["lat"],
                                              'longitude' => $result["lon"]));
     }
+
     //AFFICHER LE FOOTER
     public function footer()
     {
