@@ -10,7 +10,8 @@
                     "app/controller/controller.php",
                     "app/controller/authentification.php",
                     "app/api/get.php",
-                    "app/api/velib.php" ],
+                    "app/api/velib.php",
+                    "app/api/google.php"],
         "classmap": [
             "app/model"
         ]

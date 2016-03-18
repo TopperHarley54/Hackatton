@@ -28,8 +28,15 @@ class controller
     //AFFICHER LA MAP
     public function map()
     {
-        $result = file_get_contents("http://ip-api.com/json");
-        $result = json_decode($result,true);
+        $name_ville = $this->app->request->get('ville');
+        if ($name_ville != null){
+            $google = Google::getCoordFromSearchAdress($name_ville);
+            $result["lat"]=$google->geometry->location->lat;
+            $result["lon"]=$google->geometry->location->lng;
+        }else {
+            $result = file_get_contents("http://ip-api.com/json");
+            $result = json_decode($result, true);
+        }
         $this->app->render('map.twig', array('latitude' => $result["lat"],
                                              'longitude' => $result["lon"]));
     }
@@ -48,13 +55,14 @@ class controller
     {
         $this->header();
         $this->navbar();
+        $this->searchBar();
         $this->map();
         $this->footer();
     }
 
 
     public function searchBar(){
-
+        $this->app->render('searchBar.twig');
     }
 
     public function testApi()
