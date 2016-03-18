@@ -55,8 +55,9 @@ class controller
     public function testApi()
     {
         $velib = Velib::getVelib();
+        var_dump("<pre>",$velib,"</pre>");
         $this->app->render('velib.twig', array(
-            'name' => $velib[0]['name']
+            //'name' => $velib
         ));
     }
 
