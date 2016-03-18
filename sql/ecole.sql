@@ -27,7 +27,7 @@
 	, `NB_C105_NB_EP` varchar(50) DEFAULT NULL
 	) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 	
-	INSERT INTO `ecoles` (`CODGEO`, `LIBGEO`, `DEP`, `REG`, `REG2016`, `NB_C101`, `NB_C101_NB_CANT`, `NB_C101_NB_EP`, `NB_C101_NB_RPIC`, `NB_C102`, `NB_C102_NB_CANT`, `NB_C102_NB_EP`, `NB_C104`, `NB_C104_NB_CANT`, `NB_C104_NB_CL_PELEM`, `NB_C104_NB_EP`, `NB_C104_NB_RPIC`, `NB_C105`, `NB_C105_NB_CANT`, `NB_C105_NB_CL_PELEM`, `NB_C105_NB_EP`) VALUES
+	INSERT INTO `ecole` (`CODGEO`, `LIBGEO`, `DEP`, `REG`, `REG2016`, `NB_C101`, `NB_C101_NB_CANT`, `NB_C101_NB_EP`, `NB_C101_NB_RPIC`, `NB_C102`, `NB_C102_NB_CANT`, `NB_C102_NB_EP`, `NB_C104`, `NB_C104_NB_CANT`, `NB_C104_NB_CL_PELEM`, `NB_C104_NB_EP`, `NB_C104_NB_RPIC`, `NB_C105`, `NB_C105_NB_CANT`, `NB_C105_NB_CL_PELEM`, `NB_C105_NB_EP`) VALUES
 		("54001", "Abaucourt", "54", "41", "44", "0", "0", "0", "0", "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"),
 		("54002", "Abbéville-lès-Conflans", "54", "41", "44", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"),
 		("54003", "Aboncourt", "54", "41", "44", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"),
@@ -623,6 +623,6 @@
 		("54601", "Xures", "54", "41", "44", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"),
 		("54602", "Han-devant-Pierrepont", "54", "41", "44", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
 
-	ALTER TABLE `ecoles`
+	ALTER TABLE `ecole`
   		ADD PRIMARY KEY (`CODGEO`);
 	
