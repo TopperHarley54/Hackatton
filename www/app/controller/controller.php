@@ -20,12 +20,17 @@ class controller
     //AFFICHER LE NAVBAR
     public function navbar()
     {
-        $this->app->render('navbar.twig');
+        // $this->app->render('navbar.twig', array{
+        //   'options' =>
+        // });
     }
+
+    //AFFICHER LA MAP
     public function map()
     {
         $this->app->render('map.twig');
     }
+
     //AFFICHER LE FOOTER
     public function footer()
     {
