@@ -8,6 +8,7 @@
     "autoload": {
         "files": [ "boot-eloquent.php", 
                     "app/controller/controller.php",
+                    "app/controller/controllerAPI.php",
                     "app/controller/authentification.php",
                     "app/api/get.php",
                     "app/api/velib.php",
