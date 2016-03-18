@@ -28,8 +28,6 @@ class controller
     public function accueil()
     {
         $this->header();
-        $documents = Document::getAllDocuments();
-        $this->listeDocuments($documents);
         $this->footer();
     }
 
