@@ -8,7 +8,6 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-
 class Medical extends Model{
 
     protected $fillable = ['CODGEO', 'LIBGEO', 'DEP', 'REG', 'REG2016', 'NB_D201', 'NB_D202', 'NB_D203', 'NB_D204', 'NB_D205', 'NB_D206', 'NB_D207', 'NB_D208',
