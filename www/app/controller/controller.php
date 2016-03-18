@@ -14,7 +14,7 @@ class controller
     //AFFICHER LE HEADER
     public function header()
     {
-        $this->app->render('header.twig', array('isLogged' => SecurityTools::isLogged()));
+        $this->app->render('header.twig');
     }
 
     //AFFICHER LE FOOTER
