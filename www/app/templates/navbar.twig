@@ -1,10 +1,10 @@
-<div>
+<div id="navbar">
   {% for option in options %}
     <div>
       {{option.title}}
-      <ul>
+      <ul class='categorie'>
       {% for cat in option.type %}
-        <li><input type='checkbox'>{{cat}}</input></li>
+        <li class='sous-categorie'><input class='checkbox' type='checkbox'/><div name='{{cat}}'>{{cat}}</div></li>
       {% endfor %}
     </ul>
     </div>
