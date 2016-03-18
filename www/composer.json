@@ -6,8 +6,8 @@
         "illuminate/database": "5.0.*"
     },
     "autoload": {
-        "files": [ "app/config.php", "app/Controller/Controller.php", "app/SecurityTools.php",
-                    "app/Controller/Authentification.php" ],
+        "files": [ "boot-eloquent.php", "app/controller/controller.php",
+                    "app/controller/authentification.php" ],
         "classmap": [
             "app/model"
         ]
