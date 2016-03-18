@@ -1,9 +1,9 @@
-
+﻿
 
 	SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 	SET time_zone = "+00:00";
 
-	CREATE TABLE `medicales` (
+	CREATE TABLE `medicale` (
 	`CODGEO` varchar(50) NOT NULL
 	, `LIBGEO` varchar(50) DEFAULT NULL
 	, `DEP` varchar(50) DEFAULT NULL
