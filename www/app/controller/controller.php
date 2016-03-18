@@ -24,7 +24,10 @@ class controller
     }
     public function map()
     {
-        $this->app->render('map.twig');
+        $result = file_get_contents("http://ip-api.com/json");
+        $result = json_decode($result,true);
+        $this->app->render('map.twig', array('latitude' => $result["lat"],
+                                             'longitude' => $result["lon"]));
     }
     //AFFICHER LE FOOTER
     public function footer()
