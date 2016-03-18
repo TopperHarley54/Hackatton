@@ -17,6 +17,12 @@ class controller
         $this->app->render('header.twig');
     }
 
+    public function map()
+    {
+        $this->app->render('map.twig');
+    }
+
+
     //AFFICHER LE FOOTER
     public function footer()
     {
@@ -28,6 +34,7 @@ class controller
     public function accueil()
     {
         $this->header();
+        $this->map();
         $this->footer();
     }
 
