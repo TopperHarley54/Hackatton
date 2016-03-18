@@ -52,10 +52,19 @@ class controller
         $this->footer();
     }
 
+
     public function searchBar(){
 
     }
 
+    public function testApi()
+    {
+        $velib = Velib::getVelib();
+        var_dump("<pre>",$velib,"</pre>");
+        $this->app->render('velib.twig', array(
+            //'name' => $velib
+        ));
+    }
 
   }
 
