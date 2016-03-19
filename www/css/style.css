@@ -1,0 +1,39 @@
+html, body {
+    height: 100%;
+}
+.container-fluid, .row {
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;/* don't show content that exceeds my height */
+}
+
+#conteneur{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+header{
+    background-color: #4682B4;
+}
+
+#titre{
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+
+#navbar{
+    background-color: #4682B4;
+    height: 100%;
+}
+
+.option{
+    color: #d9edf7;
+    padding-bottom: 30px;
+}
+
+#logo{
+    float: left;
+    width: 2.5%;
+    height: 2.5%;
+}
