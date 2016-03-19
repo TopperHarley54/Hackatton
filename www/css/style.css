@@ -140,30 +140,51 @@ header{
 }
 
 
-
 .dropdown {
-  position: fixed;
-  right: 0px;
-  top: 50px;
-  z-index: 2000; }
-  .dropdown > .dropdown-menu {
     position: fixed;
-    top: 45px;
-    right: 10px;
-    background-color: #985CAD; }
-    .dropdown > .dropdown-menu li {
-      list-style: none;
-      margin: 0; }
-    .dropdown > .dropdown-menu:hover, .dropdown > .dropdown-menu:focus {
-      display: block; }
-  .dropdown > a.dropdown-title {
+    right: 5%;
+    top: 12%;
+    z-index: 2000;
+    font-size: 12px;}
+.dropdown > .dropdown-menu {
+    position: fixed;
+    top: 16%;
+    left : 55%;
+    background-color: #808080;
+    width : 7%;}
+@media screen and (max-width: 480px) {
+    .dropdown > .dropdown-menu {
+        display: none;} }
+.dropdown > .dropdown-menu li {
+    list-style: none;
+    margin: 0; }
+.dropdown > .dropdown-menu li a {
+    text-decoration: none;
+    color: black;
+    display: block; }
+.dropdown > .dropdown-menu li a:hover, .dropdown > .dropdown-menu li a:focus {
+    color: white;  }
+.dropdown > .dropdown-menu:hover, .dropdown > .dropdown-menu:focus {
+    display: block; }
+.dropdown > a.dropdown-title {
     cursor: pointer;
-    background-color: #666666;
-    border: 2px solid black;
+    background-color: #808080;
+    border: 2px solid #5e5e5e;
     color: white;
     padding: 10px; }
-    .dropdown > a.dropdown-title:hover, .dropdown > a.dropdown-title:focus {
-      background-color: #808080;
-      padding: 10px; }
-      .dropdown > a.dropdown-title:hover + ul.dropdown-menu, .dropdown > a.dropdown-title:focus + ul.dropdown-menu {
-        display: block; }
+.dropdown > a.dropdown-title:hover, .dropdown > a.dropdown-title:focus {
+    background-color: #8c8c8c;
+    padding: 10px; }
+.dropdown > a.dropdown-title:hover + .dropdown-menu, .dropdown > a.dropdown-title:focus + .dropdown-menu {
+    display: block; }
+@media screen and (min-width: 479px) {
+    .dropdown {
+        display: none; } }
+
+.dropdown .option{
+    padding: 5px;
+}
+
+.dropdown h4{
+    font-size: 12px;
+}
