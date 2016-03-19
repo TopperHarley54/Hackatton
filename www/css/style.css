@@ -1,6 +1,7 @@
 html, body {
     height: 100%;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #708090;
 }
 .container-fluid, .row {
     height: 100%;
@@ -49,19 +50,40 @@ header{
 }
 
 #searchBar{
-<<<<<<< HEAD
     color: #d9edf7;
-    background-color: #708090;
-    padding-left: 45%;
+    border-radius: 5px 5px 0px 0px;
+    /*background-color: #708090;*/
+    background-color: #8196AB;
+    /*padding-left: 45%;*/
     border-width: 0px;
+    padding: 5px 0px;
+}
+
+#searchBar span{
+  padding-top: 3px;
+  margin-left: 5px;
+}
+
+#champRecherche{
+  color: #0f0f0f;
+  border-radius: 5px;
+}
+#boutonValider{
+  color: #0f0f0f;
+  border: transparent solid 1px;
+  border-radius: 5px;
+  background-color: #666666;
+  display: inline-block;
+  padding: 3px 3px;
+  /*margin: 10px;*/
+  font-weight: bold;
+  font-family: "DIN", "Arial", sans-serif;
+}
+
+#boutonValider:hover{
+  background-color: #808080;
 }
 
 h4:hover{
     color: white;
 }
-=======
-  margin: 3px 0px;
-  padding: 0px 6px;
-
-}
->>>>>>> 38d0ded82db02c6ed3616e7e9f6559b03030e051

@@ -15,7 +15,7 @@ $(function () {
         var nomData = $(li.children[1]).attr('name');
         console.log(nomData);
 
-        if($(this).children('input').prop('checked') === true){     
+        if($(this).children('input').prop('checked') === true){
           var tmp = $(li).parent().prev().text();
           if (window.param[tmp] === undefined) {
             window.param[tmp] = [];
