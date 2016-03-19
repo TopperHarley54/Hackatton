@@ -65,6 +65,7 @@ function sauverDonnees() {
     data : JSON.stringify(alerte) ,
     success: function(data){
       console.log(data);
+      $('div.modal').modal('hide')
     },
     error: function(){
       console.log("fail...");
