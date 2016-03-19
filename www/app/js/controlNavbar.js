@@ -45,13 +45,9 @@ $(function () {
     $(".option").children('ul').hide();
     var cache;
     $(".option").children('.titre').click(function(){
-        if(cache === undefined || cache == false){
           $(this).parent().children('ul').hide();
           cache = true;
-        }else{
-          $(this).parent().children('ul').show();
-          cache = false;
-        }
+        
     });
 });
 
