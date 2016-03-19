@@ -1,12 +1,27 @@
-<div id="navbar" class="col-xs-2 col-md-2">
+<div id="navbar" class="col-xs-2 col-md-2" xmlns="http://www.w3.org/1999/html">
   {% for option in options %}
     <div class="option">
-      <h4 class="titre">{{option.title}}</h4>
+      <h4 class="titre" style="margin-bottom: 15px">{{option.title}}</h4>
       <ul class='categorie'>
       {% for cat in option.type %}
-        <li class='sous-categorie'><input class='checkbox' type='checkbox'/><div name='{{cat[0]}}'>{{cat[1]}}</div></li>
+        <li class="sous-categorie btn-group" data-toggle="buttons">
+
+          <label class="btn btn-primary col-xs-12 col-md-12" style="width: 150px; margin-bottom: 5px" >
+            <input type='checkbox' autocomplete="off">
+            <div style="font-size: 10px; vertical-align: middle" name='{{cat[0]}}'>{{cat[1]}}</div>
+          </label>
+        </li>
       {% endfor %}
       </ul>
       </div>
   {% endfor %}
 </div>
+
+{#
+<script>
+  $(document).ready(function () {
+    $("label.btn").click(function() {
+
+    });
+  });
+</script>#}
