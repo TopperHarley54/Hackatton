@@ -32,12 +32,14 @@ function afficherPopUpEnregistrement(latlng){
   var popupModif = $('<div>').attr('class','popup modal fade in');
   var affCoordonnees = $('<div>').attr('class','coordonnees').val(latlng);
   var affSelecteur = $('<div>').attr('class','selecteur');
-  var affCommentaire = $('<div>').attr('class','champCommentaire');
+  var affCommentaire = $('<div>').attr('class','champCommentaire').append($("<input>").attr('type','text'));
   var boutonValidation = $('<button>').attr('class','boutonValider');
 
 popupModif.append(affCoordonnees);
 popupModif.append(affSelecteur);
 popupModif.append(affCommentaire);
-$($(popupModif)).modal('show');
+$("div.modal-body").append(popupModif);
+$("div.modal").modal();
+$("div.modal-backdrop").detach();
   // console.log(popupModif);
 }
