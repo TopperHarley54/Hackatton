@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 class Medical extends Model{
 
     protected $primaryKey = "CODGEO";
-    protected $table = "medical";
+    protected $table = "medicale";
     public $timestamps = false;
 
 
