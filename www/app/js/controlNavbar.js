@@ -2,6 +2,8 @@
 $(function () {
   window.controlNavbar = {};
 
+  window.param = {};
+
   var navbar = document.getElementById('navbar');
   // console.log(navbar);
   $(navbar.children).each(function(index, element){
@@ -13,13 +15,20 @@ $(function () {
         var nomData = $(li.children[1]).attr('name');
         console.log(nomData);
 
+        if($(this).children('input').prop('checked') === true){     
+          var tmp = $(li).parent().prev().text();
+          if (window.param[tmp] === undefined) {
+            window.param[tmp] = [];
+          }
+          console.log($(li).children('div').prop('name'));
+          window.param[tmp].push($(li.children[1]).attr('name'));
+        }else{
+          window.param[$(li).parent().prev().text()].splice($(li).parent().prev().text().indexOf($(li.children[1]).attr('name')),1);
+        }
         $.ajax({
-          type: "GET",
-          url:"getData.php",
-          data: {
-            action : 'actualiserMap',
-            typeData : nomData
-          },
+          type: "POST",
+          url:"api/requeteMap",
+          data : JSON.stringify(window.param) ,
           success: function(data){
             console.log(data);
           },

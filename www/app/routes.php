@@ -46,6 +46,12 @@ $app->group('/api', function () use ($app) {
         $c = new ControllerAPI($app);
         $c->alerteDelete($id);
     })->name('api-delete-alerte');
+
+    $app->post('/requeteMap', function () use ($app) {
+        $c = new ControllerRequete($app);
+        var_dump(json_decode($app->request->getBody())[0]);
+        $c->getData($_POST['data']);
+    })->name('requete-get-data');
 });
 
 ?>
