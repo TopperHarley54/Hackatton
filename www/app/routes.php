@@ -21,6 +21,11 @@ $app->group('/api', function () use ($app) {
         $c->alerteAll();
     })->name('api-alerte');
 
+    $app->get('/alerteForm', function () use ($app) {
+        $c = new Controller($app);
+        $c->alertform();
+    })->name('api-alerte');
+
     $app->get('/alerte/:id', function ($id) use ($app) {
         $c = new ControllerAPI($app);
         $c->alerteId($id);

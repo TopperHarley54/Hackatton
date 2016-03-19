@@ -13,7 +13,7 @@ $(function () {
 
 function onMapClick(e) {
 
-    var popup = L.popup({maxWidth:50,maxHeight:50}).setLatLng(e.latlng).setContent("<div onclick=window.location.href='http://localhost/Hackatton/www/'> create new alert </div>").openOn(mymap);
+    var popup = L.popup({maxWidth:50,maxHeight:50}).setLatLng(e.latlng).setContent("<div onclick=window.location.href='alertForm'> create new alert </div>").openOn(mymap);
 
  
 }
