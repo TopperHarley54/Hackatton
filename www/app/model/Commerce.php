@@ -16,8 +16,8 @@ class Commerce extends Model
 
     public static function getAllDocuments($var)
     {
+    	array_push($var, 'LIBGEO');
         return Commerce::get($var);
-
     }
 
 }

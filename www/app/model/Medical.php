@@ -11,14 +11,14 @@ use Illuminate\Database\Eloquent\Model;
 class Medical extends Model{
 
     protected $primaryKey = "CODGEO";
-    protected $table = "medical";
+    protected $table = "medicale";
     public $timestamps = false;
 
 
     public static function getAllDocuments($var)
     {
+    	array_push($var, 'LIBGEO');
         return Medical::get($var);
-
     }
 }
 

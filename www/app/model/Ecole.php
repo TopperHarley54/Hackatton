@@ -17,6 +17,7 @@ class Ecole extends Model{
 
     public static function getAllDocuments($var)
     {
+    	array_push($var, 'LIBGEO');
         return Ecole::get($var);
 
     }
