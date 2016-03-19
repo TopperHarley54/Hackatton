@@ -118,6 +118,8 @@ header{
   margin-top: 50px;
 }
 
+
+
 .modal-body{
   padding: 10px;
   max-height: 200px;
@@ -126,6 +128,10 @@ header{
 
 .modal-body .popup{
   padding: 10px;
+}
+
+.leaflet-popup-content-wrapper{
+  cursor:pointer;
 }
 
 .categorie{

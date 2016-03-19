@@ -17,7 +17,7 @@ function onMapClick(e) {
 
 
     // var popup = L.popup({maxWidth:50,maxHeight:50}).setLatLng(e.latlng).setContent("<div onclick=window.location.href='alertForm'> create new alert </div>").openOn(mymap);
-    var popup = L.popup({maxWidth:50,maxHeight:50}).setLatLng(e.latlng).setContent("<div onclick=afficherPopUpEnregistrement()> create new alert </div>").openOn(mymap);
+    var popup = L.popup({maxWidth:170,maxHeight:50}).setLatLng(e.latlng).setContent("<div onclick=afficherPopUpEnregistrement()> Créer une nouvel alerte. </div>").openOn(mymap);
     // var popup = L.popup({maxWidth:50,maxHeight:50}).setLatLng(e.latlng).setContent(affipopup).openOn(mymap);
     coo=e.latlng;
 
@@ -43,7 +43,7 @@ function afficherPopUpEnregistrement(latlng){
   affSelecteur.append($('<option>').append('Shopping'));
   affSelecteur.append($('<option>').append('Station-service'));
   var affCommentaire = $('<div>').attr('class','champCommentaire').text("Commentaire").append($("<input>").attr('type','text'));
-  var boutonValidation = $('<button>').attr('id','boutonValider').text('Sauver');
+  var boutonValidation = $('<button>').attr('id','boutonValider').text('Sauver').attr('onclick','sauverDonnees()');
 
 popupModif.append(affCoordonnees);
 popupModif.append(affSelecteur);
