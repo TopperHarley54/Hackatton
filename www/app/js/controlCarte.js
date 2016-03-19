@@ -25,12 +25,9 @@ function onMapClick(e) {
 }
 
 function afficherPopUpEnregistrement(latlng){
-  // console.log('TEST');
-  // console.log(coo);
-  //coordonnées
   //type de l'information dans un selecteur
   //commentaire libre
-  console.log(coo.toString());
+  console.log(coo['lat']);
   var popupModif = $('<div>').attr('class','popup modal fade in');
   var affCoordonnees = $('<div>').attr('class','coordonnees');
   affCoordonnees.text(coo.toString());
@@ -43,7 +40,7 @@ function afficherPopUpEnregistrement(latlng){
   affSelecteur.append($('<option>').append('Pour la maison'));
   affSelecteur.append($('<option>').append('Shopping'));
   affSelecteur.append($('<option>').append('Station-service'));
-  var affCommentaire = $('<div>').attr('class','champCommentaire').text("Commentaire").append($("<input>").attr('type','text'));
+  var affCommentaire = $('<div>').attr('class','champCommentaire').text("Commentaire").append($("<input>").attr('type','text').addClass('commentaire'));
   var boutonValidation = $('<button>').attr('id','boutonValider').text('Sauver').attr('onclick','sauverDonnees()');
 
   popupModif.append(affCoordonnees);
@@ -53,5 +50,23 @@ function afficherPopUpEnregistrement(latlng){
   $("div.modal-body").append(popupModif);
   $("div.modal").modal();
   $("div.modal-backdrop").detach();
-    // console.log(popupModif);
+}
+
+function sauverDonnees() {
+  console.log(coo);
+  var type = $('.selecteur').val();
+  console.log(type);
+  var comm = $('.commentaire').val();
+  var alerte = [{"lat":coo["lat"],"lng":coo["lng"],"type":type,"commentaire":comm}];
+  $.ajax({
+    type: "POST",
+    url:"api/alerte",
+    data : JSON.stringify(alerte) ,
+    success: function(data){
+      console.log(data);
+    },
+    error: function(){
+      console.log("fail...");
+    }
+  });
 }
