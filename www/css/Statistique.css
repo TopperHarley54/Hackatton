@@ -1,0 +1,11 @@
+
+table{
+    ;
+    border: solid 3px black;
+    text-align: center;
+}
+
+td{
+    border-bottom: solid 3px black;
+    border-left: solid 3px black;
+}
