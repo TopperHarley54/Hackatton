@@ -75,8 +75,60 @@ class ControllerAPI extends Controller
 
     public function getData($donnees)
     {
-        
-        $ecole = Ecole::getAllDocuments(json_decode($donnees,true)["Ecole"]);
-        $this->app->render('json.twig', array('json' => $ecole));
+       if(isset(json_decode($donnees,true)["Ecole"])){
+            if(sizeof(json_decode($donnees,true)["Ecole"]) > 0){
+                $ecole = Ecole::getAllDocuments(json_decode($donnees,true)["Ecole"]);            
+                $this->app->render('json.twig', array('json' => $ecole));
+            }
+        }
+        if(isset(json_decode($donnees,true)["Médical"])){
+            if(sizeof(json_decode($donnees,true)["Médical"]) > 0){
+
+                $medical = Medical::getAllDocuments(json_decode($donnees,true)["Médical"]);
+                $this->app->render('json.twig', array('json' => $medical));
+            }
+        }
+        if(isset(json_decode($donnees,true)["Sport/Loisir"])){
+            if(sizeof(json_decode($donnees,true)["Sport/Loisir"]) > 0){
+
+                $sport = Loisir::getAllDocuments(json_decode($donnees,true)["Sport/Loisir"]);
+                $this->app->render('json.twig', array('json' => $sport));
+            }
+        }
+        if(isset(json_decode($donnees,true)["Commerce Alimentaire"])){
+            if(sizeof(json_decode($donnees,true)["Commerce Alimentaire"]) > 0){
+
+                $commerce = Commerce::getAllDocuments(json_decode($donnees,true)["Commerce Alimentaire"]);
+                $this->app->render('json.twig', array('json' => $commerce));
+            }
+        }
+        if(isset(json_decode($donnees,true)["Marché"])){
+            if(sizeof(json_decode($donnees,true)["Marché"]) > 0){
+
+                $commerce = Commerce::getAllDocuments(json_decode($donnees,true)["Marché"]);
+                $this->app->render('json.twig', array('json' => $commerce));
+            }
+        }
+        if(isset(json_decode($donnees,true)["Pour la maison"])){
+            if(sizeof(json_decode($donnees,true)["Pour la maison"]) > 0){
+
+               $commerce = Commerce::getAllDocuments(json_decode($donnees,true)["Pour la maison"]);
+                $this->app->render('json.twig', array('json' => $commerce));
+            }
+        }
+        if(isset(json_decode($donnees,true)["Shopping"])){
+            if(sizeof(json_decode($donnees,true)["Shopping"]) > 0){
+
+                $commerce = Commerce::getAllDocuments(json_decode($donnees,true)["Shopping"]);
+                $this->app->render('json.twig', array('json' => $commerce));
+            }
+        }
+        if(isset(json_decode($donnees,true)["Station-service"])){
+            if(sizeof(json_decode($donnees,true)["Station-service"]) > 0){
+
+                $station = Commerce::getAllDocuments(json_decode($donnees,true)["Station-service"]);
+                $this->app->render('json.twig', array('json' => $station));
+            }
+        }
     }
 }
