@@ -25,6 +25,37 @@ class Alerte extends Model{
         }
     }
 
+    public static function incValide($id) {
+        try {
+            $alerte = Alerte::find($id);
+            $alerte->nbValide++;
+            $alerte->save();
+            return $alerte;
+        } catch (Exception $e) {
+            return null;
+        }
+    }
+
+    public static function incRefus($id) {
+        try {
+            $alerte = Alerte::find($id);
+            $alerte->nbRefus++;
+            $alerte->save();
+            return $alerte;
+        } catch (Exception $e) {
+            return null;
+        }
+    }
+
+    public static function deleteAlerte($id) {
+        try {
+            $alerte = Alerte::find($id);
+            $alerte->delete();
+            return 0;
+        } catch (Exception $e) {
+            return 1;
+        }
+    }
 }
 
 
