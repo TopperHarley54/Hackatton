@@ -110,6 +110,22 @@ header{
   background-color: #808080;
 }
 
+.checkbox{
+  display: inline-block;
+}
+
+.categorie{
+  
+}
+
+.sous-categorie{
+  list-style-type:none;
+}
+
+.sous-categorie div{
+  display: inline-block;
+}
+
 h4:hover{
     color: white;
 }
