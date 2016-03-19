@@ -1,11 +1,12 @@
 'use strict';
 $(function () {
-  window.controlCarte = {};
+  if (typeof mymap !== 'undefined') {
+    window.controlCarte = {};
 
-  mymap.on('click', onMapClick);
-  // var coo;
+    mymap.on('click', onMapClick);
+    // var coo;
 
-
+  }
 
 });
 
@@ -17,29 +18,56 @@ function onMapClick(e) {
 
 
     // var popup = L.popup({maxWidth:50,maxHeight:50}).setLatLng(e.latlng).setContent("<div onclick=window.location.href='alertForm'> create new alert </div>").openOn(mymap);
-    var popup = L.popup({maxWidth:50,maxHeight:50}).setLatLng(e.latlng).setContent("<div onclick=afficherPopUpEnregistrement()> create new alert </div>").openOn(mymap);
+    var popup = L.popup({maxWidth:170,maxHeight:50}).setLatLng(e.latlng).setContent("<div onclick=afficherPopUpEnregistrement()> Créer une nouvel alerte. </div>").openOn(mymap);
     // var popup = L.popup({maxWidth:50,maxHeight:50}).setLatLng(e.latlng).setContent(affipopup).openOn(mymap);
     coo=e.latlng;
 
 }
 
 function afficherPopUpEnregistrement(latlng){
-  // console.log('TEST');
-  // console.log(coo);
-  //coordonnées
   //type de l'information dans un selecteur
   //commentaire libre
+  console.log(coo['lat']);
   var popupModif = $('<div>').attr('class','popup modal fade in');
-  var affCoordonnees = $('<div>').attr('class','coordonnees').val(latlng);
-  var affSelecteur = $('<div>').attr('class','selecteur');
-  var affCommentaire = $('<div>').attr('class','champCommentaire').append($("<input>").attr('type','text'));
-  var boutonValidation = $('<button>').attr('class','boutonValider');
+  var affCoordonnees = $('<div>').attr('class','coordonnees');
+  affCoordonnees.text(coo.toString());
+  var affSelecteur = $('<select>').attr('class','selecteur');
+  affSelecteur.append($('<option>').append('Ecole'));
+  affSelecteur.append($('<option>').append('Médical'));
+  affSelecteur.append($('<option>').append('Sport/Loisir'));
+  affSelecteur.append($('<option>').append('Commerce Alimentaire'));
+  affSelecteur.append($('<option>').append('Marché'));
+  affSelecteur.append($('<option>').append('Pour la maison'));
+  affSelecteur.append($('<option>').append('Shopping'));
+  affSelecteur.append($('<option>').append('Station-service'));
+  var affCommentaire = $('<div>').attr('class','champCommentaire').text("Commentaire").append($("<input>").attr('type','text').addClass('commentaire'));
+  var boutonValidation = $('<button>').attr('id','boutonValider').text('Sauver').attr('onclick','sauverDonnees()');
 
-popupModif.append(affCoordonnees);
-popupModif.append(affSelecteur);
-popupModif.append(affCommentaire);
-$("div.modal-body").append(popupModif);
-$("div.modal").modal();
-$("div.modal-backdrop").detach();
-  // console.log(popupModif);
+
+  popupModif.append(affCoordonnees);
+  popupModif.append(affSelecteur);
+  popupModif.append(affCommentaire);
+  popupModif.append(boutonValidation);
+  $("div.modal-body").append(popupModif);
+  $("div.modal").modal();
+  $("div.modal-backdrop").detach();
+}
+
+function sauverDonnees() {
+  console.log(coo);
+  var type = $('.selecteur').val();
+  console.log(type);
+  var comm = $('.commentaire').val();
+  var alerte = [{"lat":coo["lat"],"lng":coo["lng"],"type":type,"commentaire":comm}];
+  $.ajax({
+    type: "POST",
+    url:"api/alerte",
+    data : JSON.stringify(alerte) ,
+    success: function(data){
+      console.log(data);
+    },
+    error: function(){
+      console.log("fail...");
+    }
+  });
 }

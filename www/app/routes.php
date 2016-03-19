@@ -18,6 +18,38 @@ $app->get('/alertForm', function () use ($app) {
     $c->alertform();
 })->name('api-alerte');
 
+$app->get('/Ecole', function () use ($app) {
+        $c = new Controller($app);
+        $c->ecoles();
+})->name('ecoles');
+
+$app->get('/Medical', function () use ($app) {
+        $c = new Controller($app);
+        $c->medicales();
+})->name('Medical');
+
+$app->get('/Sport', function () use ($app) {
+        $c = new Controller($app);
+        $c->sport();
+})->name('sport');
+
+$app->get('/Commerce%20Alimentaire', function () use ($app) {
+        $c = new Controller($app);
+        $c->commerceaAli();
+})->name('commerceAli');
+
+$app->get('/Marche', function () use ($app) {
+        $c = new Controller($app);
+        $c->marche();
+})->name('marche');
+
+$app->get('/Pour%20la%20maison', function () use ($app) {
+        $c = new Controller($app);
+        $c->maison();
+})->name('maison');
+
+
+
 $app->group('/api', function () use ($app) {
 
     $app->get('/alerte', function () use ($app) {
@@ -73,7 +105,7 @@ $app->group('/api', function () use ($app) {
         $c = new ControllerAPI($app);
         $type = json_decode($app->request->getBody())[0];
         $c->TypeAdd($type);
-    })->name('api-post-type');
+    })->name('api-post-type');    
 });
 
 ?>

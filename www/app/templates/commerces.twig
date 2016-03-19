@@ -1,0 +1,18 @@
+<table>
+	<tr>
+		<td Ville </td>
+		<td>Epicerie</td>
+		<td>Boulangerie</td> 
+		<td>Boucherie/Charcuterie</td>
+		<td>Surgelé</td>
+	</tr>
+ {% for commerce in commerces %}	
+	<tr>
+		<td>{{commerce.LIBGEO}}</td>
+		<td>{{commerce.NB_B202}}</td>
+		<td>{{commerce.NB_B203}}</td>
+		<td>{{commerce.NB_B204}}</td>
+		<td>{{commerce.NB_B205}}</td>
+	</tr>
+{% endfor %}
+</table>

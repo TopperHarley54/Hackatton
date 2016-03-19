@@ -1,0 +1,18 @@
+<table>
+	<tr>
+		<td Ville </td>
+		<td>Ecoles elementaire</td>
+		<td>Ecoles elementaire (avec cantine)</td>
+		<td>Maternelle</td>
+		<td>Maternelle (avec cantine)</td>
+	</tr>
+ {% for ecole in ecoles %}
+	<tr>
+		<td>{{ecole.LIBGEO}}</td>
+		<td>{{ecole.NB_C104}}</td>
+		<td>{{ecole.NB_C104}}</td>
+		<td>{{ecole.NB_C104}}</td>
+		<td>{{ecole.NB_C104}}</td>
+	</tr>
+{% endfor %}
+</table>
