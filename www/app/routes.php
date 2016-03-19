@@ -32,6 +32,20 @@ $app->group('/api', function () use ($app) {
         $c->alerteAdd($alerte);
     })->name('api-post-alerte');
 
+    $app->put('/alerte/:id/valide', function ($id) use ($app) {
+        $c = new ControllerAPI($app);
+        $c->alerteValide($id);
+    })->name('api-valide-alerte');
+
+    $app->put('/alerte/:id/refus', function ($id) use ($app) {
+        $c = new ControllerAPI($app);
+        $c->alerteRefus($id);
+    })->name('api-refus-alerte');
+
+    $app->delete('/alerte/:id', function ($id) use ($app) {
+        $c = new ControllerAPI($app);
+        $c->alerteDelete($id);
+    })->name('api-delete-alerte');
 });
 
 ?>
