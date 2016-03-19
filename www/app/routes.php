@@ -13,6 +13,10 @@ $app->get('/accueil', function () use ($app) {
     $c->accueil();
 })->name('accueil');
 
+$app->get('/alertForm', function () use ($app) {
+    $c = new Controller($app);
+    $c->alertform();
+})->name('api-alerte');
 
 $app->group('/api', function () use ($app) {
 
