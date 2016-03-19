@@ -1,5 +1,7 @@
+
 <div id="navbar" class="hidden-sm hidden-xs col-xs-2 col-md-2">
   {% for option in options %}
+    <a href="{{option.title}}">
     <div class="option">
       <h4 class="titre">{{option.title}}</h4>
       <ul class='categorie'>
@@ -8,9 +10,9 @@
       {% endfor %}
       </ul>
       </div>
+</a>
   {% endfor %}
 </div>
-
 
 <div id="navbar-responsive" class="dropdown visible-sm visible-xs col-xs-2 col-md-2">
   <a class="dropdown-title">Menu</a>
