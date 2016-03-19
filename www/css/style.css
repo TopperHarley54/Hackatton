@@ -116,10 +116,33 @@ header{
 
 .modal-content{
   margin-top: 50px;
+    height: 150px;
 }
 
+.coordonnees{
+    margin-left: 23%;
+}
 
+.selecteur{
+    margin-left: 23%;
+}
+.champCommentaire{
+    margin-left: 23%;
+}
 
+#boutonSauver{
+    color: #0f0f0f;
+    border: transparent solid 1px;
+    border-radius: 5px;
+    background-color: #666666;
+    display: inline-block;
+    padding: 3px 3px;
+    /*margin: 10px;*/
+    font-weight: bold;
+    font-family: "DIN", "Arial", sans-serif;
+    margin-left: 40%;
+    margin-top: 2%;
+}
 .modal-body{
   padding: 10px;
   max-height: 200px;
@@ -207,4 +230,16 @@ header{
 
 .dropdown h4{
     font-size: 12px;
+}
+
+
+table{
+    border: solid 2px black;
+    text-align: center;
+    margin : 0 auto;
+}
+
+td{
+    border-bottom: solid 2px black;
+    border-left: solid 2px black;
 }
