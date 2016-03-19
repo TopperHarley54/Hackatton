@@ -18,6 +18,11 @@ $app->get('/alertForm', function () use ($app) {
     $c->alertform();
 })->name('api-alerte');
 
+$app->get('/ecoles', function () use ($app) {
+        $c = new Controller($app);
+        $c->ecoles();
+})->name('ecoles');
+
 $app->group('/api', function () use ($app) {
 
     $app->get('/alerte', function () use ($app) {
@@ -73,7 +78,7 @@ $app->group('/api', function () use ($app) {
         $c = new ControllerAPI($app);
         $type = json_decode($app->request->getBody())[0];
         $c->TypeAdd($type);
-    })->name('api-post-type');
+    })->name('api-post-type');    
 });
 
 ?>
