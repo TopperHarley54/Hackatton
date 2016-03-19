@@ -53,7 +53,6 @@ $app->group('/api', function () use ($app) {
 
     $app->post('/requeteMap', function () use ($app) {
         $c = new ControllerAPI($app);
-        //var_dump(json_decode($app->request->getBody(),true));
         $c->getData($app->request->getBody());
     })->name('requete-get-data');
 
