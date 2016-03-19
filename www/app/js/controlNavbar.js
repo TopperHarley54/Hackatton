@@ -1,12 +1,12 @@
 'use strict';
 $(function () {
   window.controlNavbar = {};
+
   var navbar = document.getElementById('navbar');
   // console.log(navbar);
   $(navbar.children).each(function(index, element){
     // console.log($(element.children)[0]);
-    // console.log($($(element.children)[1]));
-    $($(element.children)[1].children).each(function(index, li){
+    $($(element.children)[0].children).each(function(index, li){
       // console.log(li);
       // console.log(li.children[0]);
       $(li.children[0]).click((event) => {
@@ -35,12 +35,12 @@ $(function () {
 
     $(".option").children('ul').hide();
     var cache;
-    $(".option").click(function(){
+    $(".option").children('.titre').click(function(){  
         if(cache === undefined || cache == false){
-          $(this).children('ul').hide();
+          $(this).parent().children('ul').hide();
           cache = true;
         }else{
-          $(this).children('ul').show();
+          $(this).parent().children('ul').show();
           cache = false;
         }
     });
