@@ -31,5 +31,20 @@ $(function () {
     })
   });
 
+  $(document).ready(function(){
+
+    $(".option").children('ul').hide();
+    var cache;
+    $(".option").click(function(){  
+        if(cache === undefined || cache == false){
+          $(this).children('ul').hide();
+          cache = true;
+        }else{
+          $(this).children('ul').show();
+          cache = false;
+        }
+    });
+});
+
 
 });
