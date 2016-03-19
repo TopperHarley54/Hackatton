@@ -6,7 +6,11 @@ class Google extends Get
 {
 
     public static function getCoordFromSearchAdress($to_search) {
-        return self::getJson("https://maps.googleapis.com/maps/api/geocode/json?address=".$to_search."&key=".KEY)->results[0];
+        try {
+            return self::getJson("https://maps.googleapis.com/maps/api/geocode/json?address=".$to_search."&key=".KEY)->results[0];
+        } catch (Exception $e) {
+            return null;
+        }
     }
 
 }

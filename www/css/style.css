@@ -49,6 +49,7 @@ header{
 }
 
 #searchBar{
+<<<<<<< HEAD
     color: #d9edf7;
     background-color: #708090;
     padding-left: 45%;
@@ -58,3 +59,9 @@ header{
 h4:hover{
     color: white;
 }
+=======
+  margin: 3px 0px;
+  padding: 0px 6px;
+
+}
+>>>>>>> 38d0ded82db02c6ed3616e7e9f6559b03030e051

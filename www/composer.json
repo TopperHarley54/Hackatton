@@ -3,7 +3,8 @@
         "slim/slim": "^2.6",
         "slim/views": "^0.1.3",
         "twig/twig": "^1.22",
-        "illuminate/database": "5.0.*"
+        "illuminate/database": "5.0.*",
+        "palanik/corsslim": "*"
     },
     "autoload": {
         "files": [ "boot-eloquent.php", 
