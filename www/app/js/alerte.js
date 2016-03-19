@@ -1,7 +1,6 @@
 
 var markerArray = new Array();
 
-
 function alerte() {
 
 
