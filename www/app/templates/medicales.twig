@@ -1,0 +1,18 @@
+<table>
+	<tr>
+		<td Ville </td>
+		<td>Medcin Général</td>
+		<td>Cardiologue</td> 
+		<td>Psychiatre</td>
+		<td>Pneumologue</td>
+	</tr>
+ {% for medicale in medicales %}	
+	<tr>
+		<td>{{medicale.LIBGEO}}</td>
+		<td>{{medicale.NB_D201}}</td>
+		<td>{{medicale.NB_D202}}</td>
+		<td>{{medicale.NB_D207}}</td>
+		<td>{{medicale.NB_D221}}</td>
+	</tr>
+{% endfor %}
+</table>

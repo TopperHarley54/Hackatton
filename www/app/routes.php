@@ -18,10 +18,20 @@ $app->get('/alertForm', function () use ($app) {
     $c->alertform();
 })->name('api-alerte');
 
-$app->get('/ecoles', function () use ($app) {
+$app->get('/Ecole', function () use ($app) {
         $c = new Controller($app);
         $c->ecoles();
 })->name('ecoles');
+
+$app->get('/Medical', function () use ($app) {
+        $c = new Controller($app);
+        $c->medicales();
+})->name('Medical');
+
+$app->get('/Sport', function () use ($app) {
+        $c = new Controller($app);
+        $c->sport();
+})->name('sport');
 
 $app->group('/api', function () use ($app) {
 

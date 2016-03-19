@@ -1,0 +1,18 @@
+<table>
+	<tr>
+		<td Ville </td>
+		<td>Athlétisme</td>
+		<td>Natation</td> 
+		<td>Boulodrome</td>
+		<td>Equipementier Cyclisme</td>
+	</tr>
+ {% for sport in sports %}	
+	<tr>
+		<td>{{sport.LIBGEO}}</td>
+		<td>{{sport.NB_F107}}</td>
+		<td>{{sport.NB_F101}}</td>
+		<td>{{sport.NB_F102}}</td>
+		<td>{{sport.NB_F104}}</td>
+	</tr>
+{% endfor %}
+</table>
