@@ -110,6 +110,44 @@ header{
   background-color: #808080;
 }
 
-h4:hover{
+.titre:hover{
     color: white;
+    cursor: pointer;
 }
+
+.sous-categorie {
+  list-style-type: none;
+}
+
+.sous-categorie > * {
+  display: inline-block;
+}
+
+
+
+.dropdown {
+  position: fixed;
+  right: 0px;
+  top: 50px;
+  z-index: 2000; }
+  .dropdown > .dropdown-menu {
+    position: fixed;
+    top: 45px;
+    right: 10px;
+    background-color: #985CAD; }
+    .dropdown > .dropdown-menu li {
+      list-style: none;
+      margin: 0; }
+    .dropdown > .dropdown-menu:hover, .dropdown > .dropdown-menu:focus {
+      display: block; }
+  .dropdown > a.dropdown-title {
+    cursor: pointer;
+    background-color: #666666;
+    border: 2px solid black;
+    color: white;
+    padding: 10px; }
+    .dropdown > a.dropdown-title:hover, .dropdown > a.dropdown-title:focus {
+      background-color: #808080;
+      padding: 10px; }
+      .dropdown > a.dropdown-title:hover + ul.dropdown-menu, .dropdown > a.dropdown-title:focus + ul.dropdown-menu {
+        display: block; }
