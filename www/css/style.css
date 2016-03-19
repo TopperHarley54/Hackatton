@@ -231,3 +231,15 @@ header{
 .dropdown h4{
     font-size: 12px;
 }
+
+
+table{
+    border: solid 2px black;
+    text-align: center;
+    margin : 0 auto;
+}
+
+td{
+    border-bottom: solid 2px black;
+    border-left: solid 2px black;
+}
