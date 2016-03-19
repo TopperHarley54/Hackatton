@@ -1,11 +1,12 @@
 'use strict';
 $(function () {
-  window.controlCarte = {};
+  if (typeof mymap !== 'undefined') {
+    window.controlCarte = {};
 
-  mymap.on('click', onMapClick);
-  // var coo;
+    mymap.on('click', onMapClick);
+    // var coo;
 
-
+  }
 
 });
 
@@ -45,12 +46,12 @@ function afficherPopUpEnregistrement(latlng){
   var affCommentaire = $('<div>').attr('class','champCommentaire').text("Commentaire").append($("<input>").attr('type','text'));
   var boutonValidation = $('<button>').attr('id','boutonSauver').text('Sauver').attr('onclick','sauverDonnees()');
 
-popupModif.append(affCoordonnees);
-popupModif.append(affSelecteur);
-popupModif.append(affCommentaire);
-popupModif.append(boutonValidation);
-$("div.modal-body").append(popupModif);
-$("div.modal").modal();
-$("div.modal-backdrop").detach();
-  // console.log(popupModif);
+  popupModif.append(affCoordonnees);
+  popupModif.append(affSelecteur);
+  popupModif.append(affCommentaire);
+  popupModif.append(boutonValidation);
+  $("div.modal-body").append(popupModif);
+  $("div.modal").modal();
+  $("div.modal-backdrop").detach();
+    // console.log(popupModif);
 }
