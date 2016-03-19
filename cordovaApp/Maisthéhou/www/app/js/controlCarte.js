@@ -43,7 +43,7 @@ function afficherPopUpEnregistrement(latlng){
   affSelecteur.append($('<option>').append('Shopping'));
   affSelecteur.append($('<option>').append('Station-service'));
   var affCommentaire = $('<div>').attr('class','champCommentaire').text("Commentaire").append($("<input>").attr('type','text'));
-  var boutonValidation = $('<button>').attr('id','boutonValider').text('Sauver');
+  var boutonValidation = $('<button>').attr('id','boutonSauver').text('Sauver');
 
 popupModif.append(affCoordonnees);
 popupModif.append(affSelecteur);

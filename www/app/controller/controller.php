@@ -26,7 +26,7 @@ class controller
             array('title' => 'Medical', 'type' => [['NB_D201','Général'], ['NB_D202','Cardiologue'], ['NB_203','Dermatologue'], ['NB_D204','Gynécologue Médicale'], ['NB_D205','Gynécologue Obstétrique'], ['NB_D206','Gastro-entéro-hépatologie'], ['NB_D207','Psychiatre'], ['NB_D208','Ophtalmologiste'], ['NB_D209','Oto-rhino-laryngologie'], ['NB_D210','Pédiatre'], ['NB_D211','Pneumologue'], ['NB_D212','Radiologie'], ['NB_D213','Stomatologie'], ['NB_D221','Dentiste'], ['NB_D232','Infirmier'], ['NB_D233','Kinésithérapeute']]),
             array('title' => 'Sport', 'type' => [['NB_F107','Athlétisme'], ['NB_F101','Natation'], ['NB_F102','Boulodrome'], ['NB_F103','Tennis'], ['NB_F104','Equipementier Cyclisme'], ['NB_F105','Domaine skiable'], ['NB_F106','Centre équestre'], ['NB_F108','Terrain de golf'], ['NB_F109','Parcours sport/santé'], ['NB_F110','Sport de glace'], ['NB_F111','Terrain de jeux extérieurs'], ['NB_F113','Terrains de grand jeu'], ['NB_F114','Salle de combat'], ['NB_F117','Skatepark'], ['NB_F118','Sport Nautique'], ['NB_F119','Bowling'], ['NB_F120','Salle de remise en forme'], ['NB_F121','Gymnase'], ['NB_F202','Port de plaisance / Mouillage'], ['NB_F203','Boucle Randonnée'], ['NB_F301','Cinéma'], ['NB_F302','Théatre']]),
             array('title' => 'Commerce Alimentaire', 'type' => [['NB_B202','Epicerie'], ['NB_B203','Boulangerie'], ['NB_B204','Boucherie/Charcuterie'], ['NB_B205','Surgelé'], ['NB_B206','Poissonnerie']]),
-            array('title' => 'Marché', 'type' => [['NB_B101','Hyper'], ['NB_B102','Super'],['NB_B201','Superette'], ['NB_309','Droguerie']]),
+            array('title' => 'Marche', 'type' => [['NB_B101','Hyper'], ['NB_B102','Super'],['NB_B201','Superette'], ['NB_B309','Droguerie']]),
             array('title' => 'Pour la maison', 'type' => [['NB_B103','Bricolage'], ['NB_B303','Equipement foyer'], ['NB_B305','Electromenager et audio-visuelle'], ['NB_B306','Meuble'], ['NB_B308','Revètement mur/sol']]),
             array('title' => 'Shopping', 'type' => [['NB_B301','Librairie'], ['NB_B302','Vêtement'], ['NB_304','Chaussures'], ['NB_307','Sport/Loisir'], ['NB_B310','Parfumerie'], ['NB_B311','Bijouterie'], ['NB_B312','Fleuriste'], ['NB_B313','Optique']]),
             array('title' => 'Station-service', 'type' => [['NB_B314','Station-service']]),
@@ -116,6 +116,30 @@ class controller
         $this->header();
         $this->navbar();
         $this->app->render('sports.twig', array("sports" => $sports));
+        $this->footer();
+    }
+
+    public function commerceaAli(){
+        $commerces = Commerce::getAllDocuments(['NB_B202','NB_B203','NB_B204','NB_B205']);
+        $this->header();
+        $this->navbar();
+        $this->app->render('commerces.twig', array("commerces" => $commerces));
+        $this->footer();
+    }
+
+    public function marche(){
+        $marches = Commerce::getAllDocuments(['NB_B101','NB_B102','NB_B201','NB_B309']);
+        $this->header();
+        $this->navbar();
+        $this->app->render('marches.twig', array("marches" => $marches));
+        $this->footer();
+    }
+
+    public function maison(){
+        $maisons = Commerce::getAllDocuments(['NB_B103','NB_B303','NB_B305','NB_B306']);
+        $this->header();
+        $this->navbar();
+        $this->app->render('maison.twig', array("maisons" => $maisons));
         $this->footer();
     }
 
