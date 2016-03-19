@@ -114,8 +114,22 @@ header{
   display: inline-block;
 }
 
+.modal-content{
+  margin-top: 50px;
+}
+
+.modal-body{
+  padding: 10px;
+  max-height: 200px;
+  min-height: 100px;
+}
+
+.modal-body .popup{
+  padding: 10px;
+}
+
 .categorie{
-  
+
 }
 
 .sous-categorie{

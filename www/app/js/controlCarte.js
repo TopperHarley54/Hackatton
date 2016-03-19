@@ -29,15 +29,26 @@ function afficherPopUpEnregistrement(latlng){
   //coordonnées
   //type de l'information dans un selecteur
   //commentaire libre
+  console.log(coo.toString());
   var popupModif = $('<div>').attr('class','popup modal fade in');
-  var affCoordonnees = $('<div>').attr('class','coordonnees').val(latlng);
-  var affSelecteur = $('<div>').attr('class','selecteur');
-  var affCommentaire = $('<div>').attr('class','champCommentaire').append($("<input>").attr('type','text'));
-  var boutonValidation = $('<button>').attr('class','boutonValider');
+  var affCoordonnees = $('<div>').attr('class','coordonnees');
+  affCoordonnees.text(coo.toString());
+  var affSelecteur = $('<select>').attr('class','selecteur');
+  affSelecteur.append($('<option>').append('Ecole'));
+  affSelecteur.append($('<option>').append('Médical'));
+  affSelecteur.append($('<option>').append('Sport/Loisir'));
+  affSelecteur.append($('<option>').append('Commerce Alimentaire'));
+  affSelecteur.append($('<option>').append('Marché'));
+  affSelecteur.append($('<option>').append('Pour la maison'));
+  affSelecteur.append($('<option>').append('Shopping'));
+  affSelecteur.append($('<option>').append('Station-service'));
+  var affCommentaire = $('<div>').attr('class','champCommentaire').text("Commentaire").append($("<input>").attr('type','text'));
+  var boutonValidation = $('<button>').attr('id','boutonValider').text('Sauver');
 
 popupModif.append(affCoordonnees);
 popupModif.append(affSelecteur);
 popupModif.append(affCommentaire);
+popupModif.append(boutonValidation);
 $("div.modal-body").append(popupModif);
 $("div.modal").modal();
 $("div.modal-backdrop").detach();
