@@ -61,6 +61,19 @@ $app->group('/api', function () use ($app) {
         $c = new ControllerAPI($app);
         $c->velibAll();
     })->name('api-velib');
+
+
+    //type
+    $app->get('/type', function () use ($app) {
+        $c = new ControllerAPI($app);
+        $c->TypeAll();
+    })->name('api-type');
+
+    $app->post('/type', function () use ($app) {
+        $c = new ControllerAPI($app);
+        $type = json_decode($app->request->getBody())[0];
+        $c->TypeAdd($type);
+    })->name('api-post-type');
 });
 
 ?>
