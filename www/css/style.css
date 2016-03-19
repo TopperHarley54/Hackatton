@@ -28,6 +28,25 @@ header{
     padding-top: 10px;
 }
 
+#searchBar span{
+  padding-top: 2px;
+}
+
+#searchBar #champRecherche{
+
+}
+
+#searchBar #boutonValider{
+    border: transparent solid 1px;
+    color: white;
+    background-color: #666666;
+    display: inline-block;
+    padding: 3px 3px;
+    /*margin: 10px;*/
+    font-weight: bold;
+    font-family: "DIN", "Arial", sans-serif;
+}
+
 .option{
     color: #d9edf7;
     padding-bottom: 30px;
@@ -42,4 +61,10 @@ header{
     float: left;
     width: 2.5%;
     height: 2.5%;
+}
+
+#searchBar{
+  margin: 3px 0px;
+  padding: 0px 6px;
+
 }
