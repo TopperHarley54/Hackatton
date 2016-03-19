@@ -27,7 +27,6 @@ function onMapClick(e) {
 function afficherPopUpEnregistrement(latlng){
   //type de l'information dans un selecteur
   //commentaire libre
-  console.log(coo['lat']);
   var popupModif = $('<div>').attr('class','popup modal fade in');
   var affCoordonnees = $('<div>').attr('class','coordonnees');
   affCoordonnees.text(coo.toString());
@@ -54,9 +53,7 @@ function afficherPopUpEnregistrement(latlng){
 }
 
 function sauverDonnees() {
-  console.log(coo);
   var type = $('.selecteur').val();
-  console.log(type);
   var comm = $('.commentaire').val();
   var alerte = [{"lat":coo["lat"],"lng":coo["lng"],"type":type,"commentaire":comm}];
   $.ajax({
