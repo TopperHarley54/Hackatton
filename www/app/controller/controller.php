@@ -95,6 +95,11 @@ class controller
         $this->app->render('alertformulaire.twig');
     }
 
+    public function ecoles(){
+        $ecoles = Ecole::getAllDocuments(['NB_C104','NB_C104_NB_CANT','NB_C101','NB_C101']);
+        $this->app->render('ecoles.twig', array("ecoles" => $ecoles));
+    }
+
   }
 
 
