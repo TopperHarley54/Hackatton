@@ -46,6 +46,11 @@ $app->group('/api', function () use ($app) {
         $c = new ControllerAPI($app);
         $c->alerteDelete($id);
     })->name('api-delete-alerte');
+
+    $app->get('/velib', function () use ($app) {
+        $c = new ControllerAPI($app);
+        $c->velibAll();
+    })->name('api-velib');
 });
 
 ?>

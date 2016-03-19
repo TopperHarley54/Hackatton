@@ -6,13 +6,13 @@ class ControllerAPI extends Controller
     public function alerteAll()
     {
         $alerte = Alerte::all();
-        $this->app->render('alerte.twig', array('alerte' => $alerte));
+        $this->app->render('json.twig', array('json' => $alerte));
     }
 
     public function alerteId($id)
     {
         $alerte = Alerte::find($id);
-        $this->app->render('alerte.twig', array('alerte' => $alerte));
+        $this->app->render('json.twig', array('json' => $alerte));
     }
 
     public function alerteAdd($alerte)
@@ -24,7 +24,7 @@ class ControllerAPI extends Controller
             $this->app->response->setStatus(400);
             $alerte = array("status" => "error");
         }
-        $this->app->render('alerte.twig', array('alerte' => $alerte));
+        $this->app->render('json.twig', array('json' => $alerte));
     }
 
     public function alerteValide($id)
@@ -36,7 +36,7 @@ class ControllerAPI extends Controller
             $this->app->response->setStatus(400);
             $alerte = array("status" => "error");
         }
-        $this->app->render('alerte.twig', array('alerte' => $alerte));
+        $this->app->render('json.twig', array('json' => $alerte));
     }
 
     public function alerteRefus($id)
@@ -48,7 +48,7 @@ class ControllerAPI extends Controller
             $this->app->response->setStatus(400);
             $alerte = array("status" => "error");
         }
-        $this->app->render('alerte.twig', array('alerte' => $alerte));
+        $this->app->render('json.twig', array('json' => $alerte));
     }
 
     public function alerteDelete($id)
@@ -60,6 +60,16 @@ class ControllerAPI extends Controller
             $this->app->response->setStatus(400);
             $alerte = array("status" => "error");
         }
-        $this->app->render('alerte.twig', array('alerte' => $alerte));
+        $this->app->render('json.twig', array('json' => $alerte));
+    }
+
+    public function velibAll()
+    {
+        $velib = Velib::getVelib();
+        if ($velib == null) {
+            $this->app->response->setStatus(400);
+            $velib = array("status" => "erreur serveur distant (velib)");
+        }
+        $this->app->render('json.twig', array('json' => $velib));
     }
 }

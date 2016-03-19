@@ -7,7 +7,11 @@ class Velib extends Get
 {
 
     public static function getVelib() {
-        return self::getJson('https://api.jcdecaux.com/vls/v1/stations?contract=' . CONTRACT . '&apiKey=' . API_KEY);
+        try {
+            return self::getJson('https://api.jcdecaux.com/vls/v1/stations?contract=' . CONTRACT . '&apiKey=' . API_KEY);
+        } catch (Exception $e) {
+            return null;
+        }
     }
 
 }
