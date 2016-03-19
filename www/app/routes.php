@@ -14,9 +14,24 @@ $app->get('/accueil', function () use ($app) {
 })->name('accueil');
 
 
-$app->get('/test-api', function () use ($app) {
-    $c = new Controller($app);
-    $c->testApi();
-})->name('test-api');
+$app->group('/api', function () use ($app) {
+
+    $app->get('/alerte', function () use ($app) {
+        $c = new ControllerAPI($app);
+        $c->alerteAll();
+    })->name('api-alerte');
+
+    $app->get('/alerte/:id', function ($id) use ($app) {
+        $c = new ControllerAPI($app);
+        $c->alerteId($id);
+    })->name('api-alerte-id');
+
+    $app->post('/alerte', function () use ($app) {
+        $c = new ControllerAPI($app);
+        $alerte = json_decode($app->request->getBody())[0];
+        $c->alerteAdd($alerte);
+    })->name('api-post-alerte');
+
+});
 
 ?>

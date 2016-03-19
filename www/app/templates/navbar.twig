@@ -1,28 +1,10 @@
-<script>
-$(document).ready(function(){
-
-    $(".option").children('ul').hide();
-    var cache;
-    $(".option").click(function(){  
-        if(cache === undefined || cache == false){
-          $(this).children('ul').hide();
-          cache = true;
-        }else{
-          $(this).children('ul').show();
-          cache = false;
-        }
-    });
-});
-</script>
-
-
-<div class="navbar">
+<div id="navbar">
   {% for option in options %}
-      <div class="option">
+    <div class="option">
       <h4>{{option.title}}</h4>
-      <ul>
+      <ul class='categorie'>
       {% for cat in option.type %}
-        <li><input type='checkbox'>{{cat}}</input></li>
+        <li class='sous-categorie'><input class='checkbox' type='checkbox'/><div name='{{cat}}'>{{cat}}</div></li>
       {% endfor %}
       </ul>
       </div>

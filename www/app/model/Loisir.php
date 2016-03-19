@@ -11,14 +11,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Loisir extends Model{
 
-    protected $fillable = ['CODGEO', 'LIBGEO', 'DEP', 'REG', 'REG2016', 'NB_F101', 'NB_F101_NB_AIREJEU', 'NB_F101_NB_COU', 'NB_F101_NB_ECL', 'NB_F102',
-        'NB_F102_NB_AIREJEU', 'NB_F102_NB_COU', 'NB_F102_NB_ECL', 'NB_F103', 'NB_F103_NB_AIREJEU', 'NB_F103_NB_COU', 'NB_F103_NB_ECL', 'NB_F104',
-        'NB_F104_NB_AIREJEU', 'NB_F104_NB_COU', 'NB_F104_NB_ECL', 'NB_F105', 'NB_F105_NB_AIREJEU', 'NB_F105_NB_COU', 'NB_F105_NB_ECL', 'NB_F106', 'NB_F106_NB_AIREJEU',
-        'NB_F106_NB_COU', 'NB_F106_NB_ECL', 'NB_F107', 'NB_F107_NB_AIREJEU', 'NB_F107_NB_COU', 'NB_F107_NB_ECL', 'NB_F108', 'NB_F108_NB_AIREJEU', 'NB_F108_NB_COU',
-        'NB_F108_NB_ECL', 'NB_F109', 'NB_F109_NB_AIREJEU', 'NB_F109_NB_COU', 'NB_F109_NB_ECL', 'NB_F110', 'NB_F110_NB_AIREJEU', 'NB_F110_NB_COU', 'NB_F110_NB_ECL',
-        'NB_F111', 'NB_F111_NB_AIREJEU', 'NB_F111_NB_COU', 'NB_F111_NB_ECL', 'NB_F112', 'NB_F112_NB_AIREJEU'];
+    protected $primaryKey = "CODGEO";
+    protected $table = "loisir";
+    public $timestamps = false;
 
+    public static function getAllDocuments($var)
+    {
+        return Loisir::get($var);
 
+    }
 }
 
 
