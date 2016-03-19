@@ -1,0 +1,18 @@
+<table>
+	<tr>
+		<td Ville </td>
+		<td>Hyper</td>
+		<td>Super</td> 
+		<td>Superette</td>
+		<td>Droguerie</td>
+	</tr>
+ {% for marche in marches %}	
+	<tr>
+		<td>{{marche.LIBGEO}}</td>
+		<td>{{marche.NB_B101}}</td>
+		<td>{{marche.NB_B102}}</td>
+		<td>{{marche .NB_B201}}</td>
+		<td>{{marche.NB_B309}}</td>
+	</tr>
+{% endfor %}
+</table>

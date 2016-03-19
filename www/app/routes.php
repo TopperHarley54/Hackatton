@@ -33,6 +33,23 @@ $app->get('/Sport', function () use ($app) {
         $c->sport();
 })->name('sport');
 
+$app->get('/Commerce%20Alimentaire', function () use ($app) {
+        $c = new Controller($app);
+        $c->commerceaAli();
+})->name('commerceAli');
+
+$app->get('/Marche', function () use ($app) {
+        $c = new Controller($app);
+        $c->marche();
+})->name('marche');
+
+$app->get('/Pour%20la%20maison', function () use ($app) {
+        $c = new Controller($app);
+        $c->maison();
+})->name('maison');
+
+
+
 $app->group('/api', function () use ($app) {
 
     $app->get('/alerte', function () use ($app) {

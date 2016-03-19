@@ -1,0 +1,18 @@
+<table>
+	<tr>
+		<td Ville </td>
+		<td>Bricolage</td>
+		<td>Equipement foyer</td> 
+		<td>Electromenager et audio-visuelle</td>
+		<td>Meuble</td>
+	</tr>
+ {% for maison in maisons %}	
+	<tr>
+		<td>{{maison.LIBGEO}}</td>
+		<td>{{maison.NB_B103}}</td>
+		<td>{{maison.NB_B303}}</td>
+		<td>{{maison.NB_B305}}</td>
+		<td>{{maison.NB_B306}}</td>
+	</tr>
+{% endfor %}
+</table>
