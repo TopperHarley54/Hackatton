@@ -14,8 +14,9 @@
 
 <div id="navbar-responsive" class="dropdown visible-sm visible-xs col-xs-2 col-md-2">
   <a class="dropdown-title">Menu</a>
+  <div class="dropdown-menu">
   {% for option in options %}
-    <div class="option dropdown-menu">
+    <div class="option">
       <h4 class="titre">{{option.title}}</h4>
       <ul class='categorie'>
       {% for cat in option.type %}
@@ -24,4 +25,5 @@
       </ul>
     </div>
   {% endfor %}
+  </div>
 </div>
