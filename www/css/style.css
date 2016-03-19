@@ -90,6 +90,7 @@ header{
   margin-left: 5px;
 }
 
+
 #champRecherche{
   color: #0f0f0f;
   border-radius: 5px;
@@ -143,6 +144,8 @@ header{
     margin-left: 40%;
     margin-top: 2%;
 }
+
+
 .modal-body{
   padding: 10px;
   max-height: 200px;
