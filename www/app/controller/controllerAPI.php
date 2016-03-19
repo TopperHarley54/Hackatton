@@ -131,4 +131,22 @@ class ControllerAPI extends Controller
             }
         }
     }
+
+    public function typeAll()
+    {
+        $type = Type::all();
+        $this->app->render('json.twig', array('json' => $type));
+    }
+
+    public function typeAdd($type)
+    {
+        if (Type::newType($type) == 0) {
+            $this->app->response->setStatus(201);
+            $type = array("status" => "created");
+        } else {
+            $this->app->response->setStatus(400);
+            $type = array("status" => "error");
+        }
+        $this->app->render('json.twig', array('json' => $type));
+    }
 }

@@ -14,6 +14,17 @@ class Type extends Model{
     protected $table = "type";
     public $timestamps = false;
 
+    public static function newType($insert_type) {
+        try {
+            $type = new Type;
+            $type->type = $insert_type->type;
+            $type->save();
+            return 0;
+        } catch (Exception $e) {
+            return 1;
+        }
+    }
+
     public function alerte()
     {
         return $this->belongsTo('alerte', 'id_alerte');
