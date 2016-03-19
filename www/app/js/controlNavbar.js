@@ -8,7 +8,7 @@ $(function () {
     // console.log($(element.children)[0]);
     $($(element.children)[0].children).each(function(index, li){
       // console.log(li);
-      // console.log(li.children[0]);
+       console.log(li.children[0]);
       $(li.children[0]).click((event) => {
         var nomData = $(li.children[1]).attr('name');
         console.log(nomData);
