@@ -52,10 +52,11 @@ $app->group('/api', function () use ($app) {
     })->name('api-delete-alerte');
 
     $app->post('/requeteMap', function () use ($app) {
-        $c = new ControllerRequete($app);
-        var_dump(json_decode($app->request->getBody())[0]);
-        $c->getData($_POST['data']);
+        $c = new ControllerAPI($app);
+        //var_dump(json_decode($app->request->getBody(),true));
+        $c->getData($app->request->getBody());
     })->name('requete-get-data');
+
     $app->get('/velib', function () use ($app) {
         $c = new ControllerAPI($app);
         $c->velibAll();

@@ -20,11 +20,11 @@ $(function () {
           if (window.param[tmp] === undefined) {
             window.param[tmp] = [];
           }
-          console.log($(li).children('div').prop('name'));
           window.param[tmp].push($(li.children[1]).attr('name'));
         }else{
           window.param[$(li).parent().prev().text()].splice($(li).parent().prev().text().indexOf($(li.children[1]).attr('name')),1);
         }
+        console.log(JSON.stringify(window.param));
         $.ajax({
           type: "POST",
           url:"api/requeteMap",

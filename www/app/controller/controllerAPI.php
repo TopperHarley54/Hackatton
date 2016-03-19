@@ -72,4 +72,11 @@ class ControllerAPI extends Controller
         }
         $this->app->render('json.twig', array('json' => $velib));
     }
+
+    public function getData($donnees)
+    {      
+        var_dump(json_decode($donnees,true)["Ecole"]);
+        $ecole = Ecole::getAllDocuments(json_decode($donnees,true)["Ecole"]);
+        $this->app->render('json.twig', array('json' => $ecole));
+    }
 }
