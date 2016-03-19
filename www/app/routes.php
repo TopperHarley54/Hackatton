@@ -13,6 +13,10 @@ $app->get('/accueil', function () use ($app) {
     $c->accueil();
 })->name('accueil');
 
+$app->get('/alertForm', function () use ($app) {
+    $c = new Controller($app);
+    $c->alertform();
+})->name('api-alerte');
 
 $app->group('/api', function () use ($app) {
 
@@ -52,6 +56,10 @@ $app->group('/api', function () use ($app) {
         var_dump(json_decode($app->request->getBody())[0]);
         $c->getData($_POST['data']);
     })->name('requete-get-data');
+    $app->get('/velib', function () use ($app) {
+        $c = new ControllerAPI($app);
+        $c->velibAll();
+    })->name('api-velib');
 });
 
 ?>
