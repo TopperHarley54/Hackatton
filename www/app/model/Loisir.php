@@ -15,6 +15,11 @@ class Loisir extends Model{
     protected $table = "loisir";
     public $timestamps = false;
 
+    public static function getAllDocuments($var)
+    {
+        return Loisir::get($var);
+
+    }
 }
 
 

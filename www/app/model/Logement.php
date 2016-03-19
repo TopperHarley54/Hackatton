@@ -14,4 +14,10 @@ class Logement extends Model{
     protected $table = "logement";
     public $timestamps = false;
 
+
+    public static function getAllDocuments($var)
+    {
+        return Logement::get($var);
+
+    }
 }

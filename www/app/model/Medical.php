@@ -14,5 +14,11 @@ class Medical extends Model{
     protected $table = "medical";
     public $timestamps = false;
 
+
+    public static function getAllDocuments($var)
+    {
+        return Medical::get($var);
+
+    }
 }
 

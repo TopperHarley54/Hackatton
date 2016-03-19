@@ -14,4 +14,10 @@ class Commerce extends Model
     protected $table = "commerce";
     public $timestamps = false;
 
+    public static function getAllDocuments($var)
+    {
+        return Commerce::get($var);
+
+    }
+
 }
