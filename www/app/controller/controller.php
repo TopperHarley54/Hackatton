@@ -91,6 +91,10 @@ class controller
         $this->app->render('searchBar.twig');
     }
 
+    public function alertform(){
+        $this->app->render('alertformulaire.twig');
+    }
+
   }
 
 
