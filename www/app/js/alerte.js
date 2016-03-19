@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    if (typeof variable !== 'undefined'){
     function alerte() {
         $.ajax({
           type: "GET",
@@ -16,4 +17,5 @@ $(document).ready(function () {
         });
     }
     alerte();
+    }
 });
